@@ -1,13 +1,112 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Premium RSS Creator</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+            min-height: 100vh;
+            color: white;
+        }
+
+        header {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+        }
+
+        .generator-box {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #1e3c72;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        input[type="url"] {
+            padding: 1rem;
+            border: 2px solid #1e3c72;
+            border-radius: 8px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        input[type="url"]:focus {
+            outline: none;
+            border-color: #2a5298;
+            box-shadow: 0 0 10px rgba(42, 82, 152, 0.3);
+        }
+
+        button {
+            background: #1e3c72;
+            color: white;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 8px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background: #2a5298;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            background: rgba(0, 0, 0, 0.3);
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    <h1>RSS Feed Generator</h1>
-    <form action="/generate" method="POST">
-        <input type="url" name="url" placeholder="Enter website URL" required>
-        <button type="submit">Generate RSS</button>
-    </form>
+    <header>
+        <h2>Premium RSS Generator</h2>
+    </header>
+
+    <div class="container">
+        <div class="generator-box">
+            <h1>Create Your Custom RSS Feed</h1>
+            <form action="/generate" method="POST">
+                <input type="url" name="url" placeholder="Enter website URL (e.g., https://example.com/feed)" required>
+                <button type="submit">Generate RSS Feed</button>
+            </form>
+        </div>
+    </div>
+
+    <footer>
+        <p>Developed by Melchizedek Bebeko</p>
+    </footer>
 </body>
 </html>
